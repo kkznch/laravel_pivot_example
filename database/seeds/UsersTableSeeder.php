@@ -12,12 +12,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        User::forceCreate([
-            'name' => 'テストユーザ',
-            'email' => 'test@test.com',
-            'email_verified_at' => now(),
-            'password' => bcrypt('password'),
-            'remember_token' => str_random(10),
-        ]);
+        $data = [
+            ['name' => 'ユーザーさん'],
+        ];
+
+        foreach ($data as $item) {
+            User::forceCreate($item);
+        }
     }
 }
